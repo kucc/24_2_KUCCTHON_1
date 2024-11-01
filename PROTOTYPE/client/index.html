@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <button class="login-btn" onclick="goToLogin()">로그인</button>
+      </header>
+
+      <main>
+        <div class="chat-header">
+          <span class="chat-icon">🤖</span>
+          <span class="chat-title">챗봇</span>
+        </div>
+        <div class="chat-window" id="chatWindow">
+          <!-- 초기 메시지를 소설 입력 요청으로 변경 -->
+          <div class="bot-message">소설 내용을 입력하세요</div>
+        </div>
+        <div class="input-area">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="입력하세요"
+            onfocus="clearPlaceholder()"
+            onblur="restorePlaceholder()"
+          />
+          <button onclick="sendMessage()" class="send-btn">✈️</button>
+          <!-- 소설 이어쓰기 버튼 추가 -->
+          <button onclick="continueNovel()" class="continue-btn">
+            소설 이어쓰기
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
